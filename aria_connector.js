@@ -6,7 +6,7 @@
  *
  * @param {Array} downloadJobs
  */
-export function queueDownload(downloadJobs) {
+function queueDownload(downloadJobs) {
     let ariaParams = [];
     
     for (let i = 0; i < downloadJobs.length; i++) {
@@ -26,7 +26,3 @@ export function queueDownload(downloadJobs) {
     ajax.open('GET', `http://localhost:6800/jsonrpc?params=${encodeURI(ariaParams)}`);
     ajax.send();
 }
-
-export {
-    queueDownload
-};
